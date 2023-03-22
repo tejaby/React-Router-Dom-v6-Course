@@ -15,11 +15,14 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />}>
+          <Route path="welcome" element={<p>welcome</p>}></Route>
+          <Route path="goodbye" element={<p>goodbye</p>}></Route>
+        </Route>
         <Route path="/users" element={<Users />} />
         <Route path="/usuarios" element={<Navigate to="/users" />} />
         <Route path="/user/:id/:user" element={<User />} />
-        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/dashboard/*" element={<DashBoard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
